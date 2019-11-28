@@ -1,0 +1,14 @@
+FROM node:10
+
+WORKDIR /backend-example-docker
+COPY ./backend-example-docker ./
+
+RUN node -v && npm -v
+
+RUN npm install
+
+EXPOSE 8000
+
+ENV FRONT_URL=http://192.168.99.100:5000
+
+CMD ["npm", "start"]

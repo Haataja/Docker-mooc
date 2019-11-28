@@ -1,0 +1,5 @@
+docker build . -f Dockerfile_front.txt -t front
+docker run -p 5000:5000 front
+
+docker build . -f Dockerfile_back.txt -t back
+docker run -p 8000:8000 back

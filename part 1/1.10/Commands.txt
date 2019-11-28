@@ -1,0 +1,5 @@
+docker build . -f Dockerfile.txt -t front
+
+docker run -p 8080:5000 front
+
+front found on http://192.168.99.100:8080/ (Using docker Toolbox)

@@ -1,0 +1,12 @@
+FROM node:10
+
+WORKDIR /backend-example-docker
+COPY ./backend-example-docker ./
+
+RUN node -v && npm -v
+
+RUN npm install
+
+EXPOSE 8000
+
+CMD ["npm", "start"]

@@ -1,0 +1,21 @@
+FROM ruby:2.6.0
+
+
+RUN apt-get update
+RUN apt-get install -y curl gnupg
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt install -y nodejs
+
+COPY ./rails-example-project ./
+
+RUN node -v && npm -v
+RUN npm install
+
+RUN gem install bundler -v 1.17.3
+RUN bundle install
+RUN bundle update --bundler
+RUN rails db:migrate
+
+EXPOSE 3000
+
+CMD ["rails", "s"]

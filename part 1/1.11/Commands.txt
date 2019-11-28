@@ -1,0 +1,5 @@
+docker build . -f Dockerfile.txt -t back
+
+docker run -v /d/docker/1.11/logs.txt:/logs.txt -p 8000:8000 back
+
+front found on http://192.168.99.100:8000/ (Using docker Toolbox)
